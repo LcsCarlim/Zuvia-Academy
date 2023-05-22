@@ -1,7 +1,7 @@
 const { compare } = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const UserModel = require('../../database/model/UserModel');
+const UserModel = require('../database/model/UserModel');
 
 module.exports = async ({ email, password }) => {
   const user = await UserModel.findOne({

@@ -1,4 +1,4 @@
-const { tokenIsInListing, addTokenToListing } = require('../../middlewares/TokenListingMiddleware');
+const { tokenIsInListing, addTokenToListing } = require('../middlewares/TokenListingMiddleware');
 
 module.exports = async (req, res) => {
   const token = req.headers.authorization.split(' ')[1];

@@ -1,4 +1,4 @@
-const UserModel = require('../../database/model/UserModel');
+const UserModel = require('../database/model/UserModel');
 
 module.exports = async (id, role) => {
   if (role !== 'Super') throw new Error('Without permission');

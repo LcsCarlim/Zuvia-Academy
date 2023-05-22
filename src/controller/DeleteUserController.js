@@ -1,4 +1,4 @@
-const DeleteUserService = require('../../services/user/DeleteUserService');
+const DeleteUserService = require('../services/DeleteUserService');
 
 module.exports = async (req, res) => {
   const { id } = req.params;
