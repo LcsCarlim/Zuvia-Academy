@@ -11,7 +11,7 @@
     },
     "servers": [
       {
-        "url": "https://api-quotation.vercel.app"
+        "url": "https://zuvia-academy.vercel.app"
       }
     ],
     "paths": {
