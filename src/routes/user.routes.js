@@ -8,6 +8,7 @@ const FindUserById = require('../controller/FindUserByIdController');
 const LogoutUserController = require('../controller/LogoutUserController');
 const userAuth = require('../middlewares/CheckTokenMiddleware');
 const userLogout = require('../middlewares/LogoutMiddleware');
+const DeleteUserController = require('../controller/DeleteUserController');
 
 routes.post('/register',
   CreateUserController
@@ -30,5 +31,10 @@ routes.get('/list',
 routes.get('/find/:id',
   userAuth,
   FindUserById
+);
+
+routes.get('/delete/:id',
+  userAuth,
+  DeleteUserController
 );
 module.exports = routes;
