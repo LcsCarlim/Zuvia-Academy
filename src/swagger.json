@@ -3,7 +3,7 @@
     "info": {
         "title": "Zuvia-Academy",
         "description": "Essa API tem o objetivo a manipulação de dados",
-        "termsOfService": "https://api-quotation.vercel.app/terms",
+        "termsOfService": "https://zuvia-academy.vercel.app/terms",
         "contact": {
             "email": "lucas.carlim@zuvia.com.br"
       },
@@ -18,7 +18,7 @@
         "/users/register": {
             "post": {
               "summary": "Cadastro de usuários",
-              "description": "Essa rota será responsável por cadastrar um novo usuário. Segue a requisição com as informações corretas e com uma senha no mínimo de 8 caracteres.",
+              "description": "Essa rota será responsável por cadastrar um novo usuário. Segue a requisição com as informações corretas e com uma senha no mínimo de 6 caracteres.",
               "tags": [
                 "Usuário"
               ],
@@ -171,14 +171,29 @@
               "name": {
                 "type": "string"
               },
+              "last_name": {
+                "type": "string"
+              },
               "email": {
                 "type": "string"
               },
               "password": {
                 "type": "string"
+              },
+              "confirm_password": {
+                "type": "string"
+              },
+              "phone_number": {
+                "type": "string"
+              },
+              "cep": {
+                "type": "string"
+              },
+              "number": {
+                "type": "string"
               }
             },
-            "required": ["name", "email", "password"]
+            "required": ["name", "last_name", "email", "password", "confirm_password", "phone_number", "cep", "number"]
           }
         },
         "securitySchemes": {
@@ -186,13 +201,18 @@
             "type": "http",
             "description": "Coloque seu token aqui!",
             "scheme": "bearer",
+            "in": "header",
             "bearerFormat": "JWT"
           }
         }
       },
       "security": [
         {
-          "bearer_token": []
+        "bearer_token": {
+          "type": "http",
+          "scheme": "bearer_token",
+          "bearerFormat": "JWT"
         }
-      ]
+      }
+     ]
 }
