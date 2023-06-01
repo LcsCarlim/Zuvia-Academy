@@ -1,13 +1,18 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const routes = require('./routes');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocs = require('./swagger.json');
 const cors = require('cors');
+const path = require('path');
 
 async function open (uri) {
   await mongoose.connect(uri);
 }
 
 const app = express();
+
+const CSS_URL = 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css';
 
 app.use(express.json());
 
