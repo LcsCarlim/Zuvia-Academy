@@ -9,6 +9,7 @@ const LogoutUserController = require('../controller/LogoutUserController');
 const userAuth = require('../middlewares/CheckTokenMiddleware');
 const userLogout = require('../middlewares/LogoutMiddleware');
 const DeleteUserController = require('../controller/DeleteUserController');
+// const SendEmailController = require('../controller/SendEmailController');
 
 routes.post('/register',
   CreateUserController

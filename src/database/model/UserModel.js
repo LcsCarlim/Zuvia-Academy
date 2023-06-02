@@ -1,6 +1,22 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
+const codeSchema = new mongoose.Schema({
+  code: {
+    type: Number,
+    required: true
+  },
+  status: {
+    type: String,
+    required: true,
+    default: 'Created',
+    enum: [
+      'Created', 'Used', 'Expired'
+    ]
+  }
+}, { _id: false }
+);
+
 const User = new mongoose.Schema({
   name: {
     type: String,
@@ -33,6 +49,14 @@ const User = new mongoose.Schema({
   role: {
     type: String,
     default: 'User'
+  },
+  code: {
+    type: codeSchema,
+    required: true
+  },
+  status: {
+    type: String,
+    default: 'pending_email_validation'
   }
 },
 {
