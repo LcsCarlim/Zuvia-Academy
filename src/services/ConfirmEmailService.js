@@ -11,7 +11,9 @@ module.exports = async ({ id, email, password, code }) => {
   if (!user) throw new Error('Email not found!');
 
   const userCode = await UserModel.findOne({
-    code
+    code: {
+      code
+    }
   });
   if (!userCode) throw new Error('Invalid code');
 
