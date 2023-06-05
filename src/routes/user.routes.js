@@ -9,6 +9,7 @@ const LogoutUserController = require('../controller/LogoutUserController');
 const userAuth = require('../middlewares/CheckTokenMiddleware');
 const userLogout = require('../middlewares/LogoutMiddleware');
 const DeleteUserController = require('../controller/DeleteUserController');
+const ConfirmEmailController = require('../controller/ConfirmEmailController');
 // const SendEmailController = require('../controller/SendEmailController');
 
 routes.post('/register',
@@ -37,5 +38,10 @@ routes.get('/find/:id',
 routes.get('/delete/:id',
   userAuth,
   DeleteUserController
+);
+
+routes.post('/confirmemail',
+  userAuth,
+  ConfirmEmailController
 );
 module.exports = routes;
