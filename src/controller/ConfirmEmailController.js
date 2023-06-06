@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
       user
     });
   } catch (error) {
-    res.status(400).json({
+    res.status(401).json({
       error: 'Something wrong happened, try again',
       message: error.message
     });
