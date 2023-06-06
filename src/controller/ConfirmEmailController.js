@@ -1,10 +1,10 @@
 const ConfirmEmailService = require('../services/ConfirmEmailService');
 
 module.exports = async (req, res) => {
-  const { id } = req.user;
+  const { _id } = req.user;
   const { code } = req.body;
   try {
-    const user = await ConfirmEmailService({ id, code });
+    const user = await ConfirmEmailService({ id: _id, code });
     res.status(200).json({
       message: 'Validated code',
       user

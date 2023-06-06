@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { tokenIsInListing } = require('./TokenListingMiddleware');
+const UserModel = require('../database/model/UserModel');
 
 module.exports = async (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -18,9 +19,12 @@ module.exports = async (req, res, next) => {
     const secret = process.env.ACCESS_TOKEN;
     const decoded = jwt.verify(token, secret);
 
-    const { id, role } = decoded;
+    const { id } = decoded;
+    const user = await UserModel.findById(id).lean();
 
-    req.user = { id, role };
+    if (!user) throw new Error('User not exists!');
+
+    req.user = user;
     next();
   } catch (error) {
     res.status(400).json({
