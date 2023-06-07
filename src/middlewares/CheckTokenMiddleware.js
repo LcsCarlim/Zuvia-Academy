@@ -20,7 +20,7 @@ module.exports = async (req, res, next) => {
     const decoded = jwt.verify(token, secret);
 
     const { id } = decoded;
-    const user = await UserModel.findById(id).lean();
+    const user = await UserModel.findById(id);
 
     if (!user) throw new Error('User not exists!');
 

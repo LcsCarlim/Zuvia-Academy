@@ -10,7 +10,7 @@ const userAuth = require('../middlewares/CheckTokenMiddleware');
 const userLogout = require('../middlewares/LogoutMiddleware');
 const DeleteUserController = require('../controller/DeleteUserController');
 const ConfirmEmailController = require('../controller/ConfirmEmailController');
-// const SendEmailController = require('../controller/SendEmailController');
+const SendEmailController = require('../controller/ResendEmailController');
 
 routes.post('/register',
   CreateUserController
@@ -23,6 +23,11 @@ routes.post('/login',
 routes.post('/logout',
   userLogout,
   LogoutUserController
+);
+
+routes.post('/resend-code',
+  userAuth,
+  SendEmailController
 );
 
 routes.get('/list',

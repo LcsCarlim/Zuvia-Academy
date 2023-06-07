@@ -115,6 +115,32 @@
             }
           }
           },
+        "/users/resend-code": {
+          "post": {
+            "summary": "Reenviar código no email",
+            "description": "Essa rota será responsável por reenviar código no email do usuário",
+            "tags": [
+              "Usuário"
+            ],
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Código enviado"
+              },
+              "400": {
+                "description": "Erro ao enviar código"
+              }
+            }
+          }
+          },
         "/users/list": {
             "get": {
               "tags": [
