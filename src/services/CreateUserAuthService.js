@@ -1,4 +1,4 @@
-const { compare } = require('bcryptjs');
+const { compare } = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const UserModel = require('../database/model/UserModel');

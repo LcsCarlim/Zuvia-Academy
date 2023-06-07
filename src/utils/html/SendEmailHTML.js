@@ -174,6 +174,8 @@ module.exports = code => {
     <body>
       <div style="display:block;max-width:800px;margin:auto;text-align:center">
         <div class="header">
+        <img src="https://bucket-api-rpg.s3.sa-east-1.amazonaws.com/zuvialogo+(1).png" width="auto" height="40"
+                  alt="zuvia.io">
         </div>
         <div style="padding:20px 4% 0 4%">
           <div style="text-align:center">

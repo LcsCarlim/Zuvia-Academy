@@ -83,19 +83,18 @@
             }
           },
         "/users/confirmemail": {
-          "post": {
-            "summary": "Confirmação de email",
-            "description": "Essa rota será responsável por enviar o código recebido no email",
-            "tags": [
-              "Usuário"
-            ],
-            "requestBody": {
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "type": "object",
-                    "properties": {
-                      "code": {
+            "post": {
+              "summary": "Confirmação de email",
+              "description": "Essa rota será responsável por enviar o código recebido no email",
+              "tags": [
+                "Usuário"
+              ],
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
                         "code": {
                           "type": "number"
                         }
@@ -103,17 +102,16 @@
                     }
                   }
                 }
-              }
-            },
-            "responses": {
-              "200": {
-                "description": "Código validado com sucesso"
               },
-              "400": {
-                "description": "Erro ao validar"
+              "responses": {
+                "200": {
+                  "description": "Código validado com sucesso"
+                },
+                "400": {
+                  "description": "Erro ao validar"
+                }
               }
             }
-          }
           },
         "/users/resend-code": {
           "post": {
