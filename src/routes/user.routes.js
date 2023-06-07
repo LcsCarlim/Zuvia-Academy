@@ -25,6 +25,7 @@ routes.post('/logout',
   LogoutUserController
 );
 
+
 routes.post('/resend-code',
   userAuth,
   SendEmailController
