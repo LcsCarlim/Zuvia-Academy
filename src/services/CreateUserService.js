@@ -14,8 +14,6 @@ module.exports = async ({ name, last_name, email, password, confirm_password, ph
     });
     if (phoneAlreadyExists) throw new Error('Phone number already exists!');
 
-    if (password !== confirm_password) throw new Error("Password doesn't match!");
-
     const response = await GetCepGateway(cep);
 
     const code = {
