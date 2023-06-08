@@ -180,7 +180,7 @@ module.exports = passwordResetToken => {
           <div style="padding:20px 4% 0 4%">
             <div style="text-align:center">
               <p style="font-size:24px">
-                <strong>Código de verificação</strong>
+                <strong>Código para resgatar a senha</strong>
               </p>
             </div>
             <div class="verify-code">
