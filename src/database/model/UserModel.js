@@ -37,6 +37,14 @@ const User = new mongoose.Schema({
     required: true,
     selector: false
   },
+  passwordResetToken: {
+    type: String,
+    select: false
+  },
+  passwordResetExpires: {
+    type: Date,
+    select: false
+  },
   cep: {
     type: String,
     required: true
