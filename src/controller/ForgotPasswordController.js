@@ -5,7 +5,11 @@ module.exports = async (req, res) => {
     const { email } = req.body;
 
     const user = await ForgotPasswordService(email);
-    res.status(200).json(user);
+    res.status(200).json({
+      user,
+      sucess: true,
+      message: 'Email sent'
+    });
   } catch (error) {
     console.log(error);
 

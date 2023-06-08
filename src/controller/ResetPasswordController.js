@@ -8,7 +8,11 @@ module.exports = async (req, res) => {
     if (validator.error) throw validator.error;
 
     const resetPass = await ResetPasswordService(email, token, password);
-    res.status(200).json(resetPass);
+    res.status(200).json({
+      resetPass,
+      sucess: true,
+      message: 'Password reseted!'
+    });
   } catch (error) {
     res.status(400).json({
       error: 'Cannot reset password, try again',

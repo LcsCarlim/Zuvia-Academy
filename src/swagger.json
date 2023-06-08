@@ -136,6 +136,29 @@
             }
           }
           },
+        "/users/forgot_password": {
+          "post": {
+            "summary": "Enviar token para o email do usuário",
+            "description": "Essa rota será responsável em enviar um token no email do usuário, será necessário para resgatar a senha.",
+            "tags": [
+              "Usuário"
+            ],
+            "requestBody": {
+              "content": {
+                "application/json": {
+                }
+              }
+            },
+            "responses": {
+              "200": {
+                "description": "Token enviado"
+              },
+              "400": {
+                "description": "Erro ao enviar o token"
+              }
+            }
+          }
+          },
         "/users/list": {
             "get": {
               "tags": [
