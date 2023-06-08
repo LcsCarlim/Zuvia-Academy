@@ -4,7 +4,7 @@ const ResetPasswordValidators = require('../validators/ResetPasswordValidators')
 module.exports = async (req, res) => {
   const { email, token, password } = req.body;
   try {
-    const validator = await ResetPasswordValidators(req.body);
+    const validator = await ResetPasswordValidators({ password });
     if (validator.error) throw validator.error;
 
     const resetPass = await ResetPasswordService(email, token, password);
