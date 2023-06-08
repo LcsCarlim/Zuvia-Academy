@@ -193,6 +193,14 @@
                   }
                 }
               }
+            },
+            "responses": {
+              "200": {
+                "description": "Senha resetada com sucesso"
+              },
+              "400": {
+                "description": "Erro ai resetar a senha"
+              }
             }
           }
         },
