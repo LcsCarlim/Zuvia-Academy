@@ -47,7 +47,7 @@
                 }
               }
             }
-          },
+        },
         "/users/login": {
             "post": {
               "summary": "Login",
@@ -81,7 +81,7 @@
                 }
               }
             }
-          },
+        },
         "/users/confirmemail": {
             "post": {
               "summary": "Confirmação de email",
@@ -112,7 +112,7 @@
                 }
               }
             }
-          },
+        },
         "/users/resend-code": {
           "post": {
             "summary": "Reenviar código no email",
@@ -135,7 +135,7 @@
               }
             }
           }
-          },
+        },
         "/users/forgot_password": {
           "post": {
             "summary": "Enviar token para o email do usuário",
@@ -158,7 +158,36 @@
               }
             }
           }
-          },
+        },
+        "/users/reset_password": {
+          "post": {
+            "summary": "Resetar a senha",
+            "description": "Essa rota será responsável por resetar e trocar a senha do usuário",
+            "tags": [
+              "Usuário"
+            ],
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "email": {
+                        "type": "string"
+                      },
+                      "token": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
         "/users/list": {
             "get": {
               "tags": [
@@ -182,7 +211,7 @@
                 }
               }
             }
-          },
+        },
         "/users/find/{id}": {
             "get": {
               "summary": "Buscar usuário por ID",
@@ -210,7 +239,7 @@
                 }
               }
             }
-          },
+        },
         "/users/delete/{id}": {
             "delete": {
               "summary": "Deletar um usuário",
@@ -238,7 +267,7 @@
                 }
               }
             }
-          }
+        }
     },
     "components": {
         "schemas": {
