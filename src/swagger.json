@@ -305,9 +305,6 @@
               "confirm_password": {
                 "type": "string"
               },
-              "phone_number": {
-                "type": "string"
-              },
               "cep": {
                 "type": "string"
               }
