@@ -310,12 +310,9 @@
               },
               "cep": {
                 "type": "string"
-              },
-              "number": {
-                "type": "string"
               }
             },
-            "required": ["name", "last_name", "email", "password", "confirm_password", "phone_number", "cep", "number"]
+            "required": ["name", "last_name", "email", "password", "confirm_password", "cep"]
           }
         },
         "securitySchemes": {

@@ -16,9 +16,6 @@ module.exports = async body => {
       .required()
       .min(6),
     confirm_password: Joi.ref('password'),
-    phone_number: Joi.string()
-      .required()
-      .min(10),
     cep: Joi.string()
       .required()
   });

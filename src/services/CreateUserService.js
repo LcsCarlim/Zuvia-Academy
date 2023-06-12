@@ -2,17 +2,12 @@ const UserModel = require('../database/model/UserModel');
 const GetCepGateway = require('../gateway/GetCepGateway');
 const SendEmailService = require('./SendEmailService');
 
-module.exports = async ({ name, last_name, email, password, confirm_password, phone_number, cep, role }) => {
+module.exports = async ({ name, last_name, email, password, confirm_password, cep, role }) => {
   try {
     const emailAlreadyExists = await UserModel.findOne({
       email
     });
     if (emailAlreadyExists) throw new Error('Email already exists!');
-
-    const phoneAlreadyExists = await UserModel.findOne({
-      phone_number
-    });
-    if (phoneAlreadyExists) throw new Error('Phone number already exists!');
 
     const response = await GetCepGateway(cep);
 
@@ -26,7 +21,6 @@ module.exports = async ({ name, last_name, email, password, confirm_password, ph
       last_name,
       email,
       password,
-      phone_number,
       cep: response.data.logradouro,
       role,
       code
