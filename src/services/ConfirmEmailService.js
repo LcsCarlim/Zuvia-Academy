@@ -2,6 +2,7 @@ const UserModel = require('../database/model/UserModel');
 
 module.exports = async ({ id, code }) => {
   const user = await UserModel.findById(id);
+
   if (user.code.code !== code) {
     throw new Error('Invalid code');
   }
@@ -9,6 +10,7 @@ module.exports = async ({ id, code }) => {
   user.code.status = 'Used';
   user.status = 'Approved';
 
+  console.log(await user.save());
+
   await user.save();
 };
-// a

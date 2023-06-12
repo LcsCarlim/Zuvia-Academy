@@ -10,7 +10,7 @@ module.exports = async body => {
       .min(6)
   });
   try {
-    return await schema.validateAsync(body);
+    return await schema.validate(body);
   } catch (error) {
     return error;
   }

@@ -27,6 +27,11 @@ routes.post('/logout',
   LogoutUserController
 );
 
+routes.post('/confirmemail',
+  userAuth,
+  ConfirmEmailController
+);
+
 routes.post('/resend-code',
   userAuth,
   SendEmailController
@@ -55,8 +60,4 @@ routes.get('/delete/:id',
   DeleteUserController
 );
 
-routes.post('/confirmemail',
-  userAuth,
-  ConfirmEmailController
-);
 module.exports = routes;
