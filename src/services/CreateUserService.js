@@ -2,7 +2,7 @@ const UserModel = require('../database/model/UserModel');
 const GetCepGateway = require('../gateway/GetCepGateway');
 const SendEmailService = require('./SendEmailService');
 
-module.exports = async ({ name, last_name, email, password, confirm_password, cep, role }) => {
+module.exports = async ({ name, last_name, email, password, cep, role }) => {
   try {
     const emailAlreadyExists = await UserModel.findOne({
       email
