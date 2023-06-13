@@ -1,13 +1,13 @@
-const createUserAuthService = require('../services/CreateUserAuthService');
-const UserAuthValidator = require('../validators/UserAuthValidator');
+const LoginService = require('../services/LoginService');
+const LoginValidator = require('../validators/LoginValidator');
 
 module.exports = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const validator = await UserAuthValidator(req.body);
+    const validator = await LoginValidator(req.body);
     if (validator.error) throw validator.error;
 
-    const usersAuth = await createUserAuthService({ email, password });
+    const usersAuth = await LoginService({ email, password });
     res.status(200).json({
       message: 'Authentication successful',
       usersAuth
