@@ -228,6 +228,30 @@
               }
             }
         },
+        "/users/userself": {
+          "get": {
+            "tags": [
+              "Usuário"
+            ],
+            "summary": "Obter informações do usuário logado",
+            "description": "Essa rota é responsável em obter todas as informações do usuário logado.",
+            "responses": {
+              "200": {
+                "description": "Usuário: ",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              },
+              "400": {
+                "description": "Erro na listagem d0 usuário!"
+              }
+            }
+          }
+        },
         "/users/find/{id}": {
             "get": {
               "summary": "Buscar usuário por ID",

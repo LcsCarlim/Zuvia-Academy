@@ -2,7 +2,7 @@ const { Router } = require('express');
 const routes = Router();
 
 const CreateUserController = require('../controller/CreateUserController');
-const CreateUserAuthController = require('../controller/CreateUserAuthController');
+const LoginController = require('../controller/LoginController');
 const ListAllUsersController = require('../controller/ListAllUsersController');
 const FindUserById = require('../controller/FindUserByIdController');
 const LogoutUserController = require('../controller/LogoutUserController');
@@ -13,13 +13,14 @@ const ConfirmEmailController = require('../controller/ConfirmEmailController');
 const SendEmailController = require('../controller/ResendEmailController');
 const ForgotPasswordController = require('../controller/ForgotPasswordController');
 const ResetPasswordController = require('../controller/ResetPasswordController');
+const UserSelfInformationController = require('../controller/UserSelfInformationController');
 
 routes.post('/register',
   CreateUserController
 );
 
 routes.post('/login',
-  CreateUserAuthController
+  LoginController
 );
 
 routes.post('/logout',
@@ -55,7 +56,12 @@ routes.get('/find/:id',
   FindUserById
 );
 
-routes.get('/delete/:id',
+routes.get('/userself',
+  userAuth,
+  UserSelfInformationController
+);
+
+routes.delete('/delete/:id',
   userAuth,
   DeleteUserController
 );
