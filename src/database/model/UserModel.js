@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
 
 const codeSchema = new mongoose.Schema({
   code: {
@@ -68,13 +67,6 @@ const User = new mongoose.Schema({
     updatedAt: 'updated_at'
   }
 
-});
-
-User.pre('save', async function (next) {
-  const hashedPassword = await bcrypt.hash(this.password, 12);
-  this.password = hashedPassword;
-
-  next();
 });
 
 module.exports = mongoose.model('User', User);

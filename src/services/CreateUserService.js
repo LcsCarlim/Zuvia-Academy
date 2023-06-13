@@ -1,6 +1,7 @@
 const UserModel = require('../database/model/UserModel');
 const GetCepGateway = require('../gateway/GetCepGateway');
 const SendEmailService = require('./SendEmailService');
+const bcrypt = require('bcrypt');
 
 module.exports = async ({ name, last_name, email, password, cep, role }) => {
   try {
@@ -16,11 +17,13 @@ module.exports = async ({ name, last_name, email, password, cep, role }) => {
       status: 'Created'
     };
 
+    const hashedPassword = await bcrypt.hash(password, 12);
+
     const createUser = await UserModel.create({
       name,
       last_name,
       email,
-      password,
+      password: hashedPassword,
       cep: response.data.logradouro,
       role,
       code
