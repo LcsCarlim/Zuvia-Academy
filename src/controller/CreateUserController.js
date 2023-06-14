@@ -1,4 +1,4 @@
-const CreateUserService = require('../services/user/ConfirmEmailService');
+const CreateUserService = require('../services/user/CreateUserService');
 const CreateUserValidators = require('../validators/CreateUserValidators');
 
 module.exports = async (req, res) => {
