@@ -1,4 +1,4 @@
-const FindUserByIdService = require('../services/FindUserByIdService');
+const FindUserByIdService = require('../services/user/FindUserByIdService');
 
 module.exports = async (req, res) => {
   const { id } = req.params;

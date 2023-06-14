@@ -1,4 +1,4 @@
-const ForgotPasswordService = require('../services/ForgotPasswordService');
+const ForgotPasswordService = require('../services/user/ForgotPasswordService');
 
 module.exports = async (req, res) => {
   try {

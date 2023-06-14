@@ -1,4 +1,4 @@
-const ResetPasswordService = require('../services/ResetPasswordService');
+const ResetPasswordService = require('../services/user/ResetPasswordService');
 const ResetPasswordValidators = require('../validators/ResetPasswordValidators');
 
 module.exports = async (req, res) => {

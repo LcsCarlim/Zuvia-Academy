@@ -1,4 +1,4 @@
-const LoginService = require('../services/LoginService');
+const LoginService = require('../services/user/LoginService');
 const LoginValidator = require('../validators/LoginValidator');
 
 module.exports = async (req, res) => {

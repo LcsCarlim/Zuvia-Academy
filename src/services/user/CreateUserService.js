@@ -1,4 +1,4 @@
-const UserModel = require('../database/model/UserModel');
+const UserModel = require('../../database/model/UserModel');
 // const GetCepGateway = require('../gateway/GetCepGateway');
 const SendEmailService = require('./SendEmailService');
 const bcrypt = require('bcrypt');

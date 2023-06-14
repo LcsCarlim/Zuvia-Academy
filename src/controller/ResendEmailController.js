@@ -1,4 +1,4 @@
-const ResendCodeService = require('../services/ResendCodeService');
+const ResendCodeService = require('../services/user/ResendCodeService');
 
 module.exports = async (req, res) => {
   const { user } = req;

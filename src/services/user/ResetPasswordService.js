@@ -1,4 +1,4 @@
-const UserModel = require('../database/model/UserModel');
+const UserModel = require('../../database/model/UserModel');
 
 module.exports = async (email, token, password) => {
   const user = await UserModel.findOne({ email })

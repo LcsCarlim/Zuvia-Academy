@@ -1,5 +1,5 @@
-const SendEmailHTML = require('../utils/html/SendEmailHTML');
-const transporter = require('../utils/smtp/SmtpConfig');
+const SendEmailHTML = require('../../utils/html/SendEmailHTML');
+const transporter = require('../../utils/smtp/SmtpConfig');
 
 module.exports = async user => {
   if (user.status === 'Approved') throw Error('User already approved!');

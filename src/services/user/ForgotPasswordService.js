@@ -1,8 +1,8 @@
-const UserModel = require('../database/model/UserModel');
+const UserModel = require('../../database/model/UserModel');
 const dotenv = require('dotenv');
 const crypto = require('crypto');
-const SendForgotPasswordHTML = require('../utils/html/SendForgotPasswordHTML');
-const transporter = require('../utils/smtp/SmtpConfig');
+const SendForgotPasswordHTML = require('../../utils/html/SendForgotPasswordHTML');
+const transporter = require('../../utils/smtp/SmtpConfig');
 
 dotenv.config();
 
