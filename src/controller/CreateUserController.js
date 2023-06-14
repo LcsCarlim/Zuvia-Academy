@@ -2,7 +2,7 @@ const CreateUserService = require('../services/CreateUserService');
 const CreateUserValidators = require('../validators/CreateUserValidators');
 
 module.exports = async (req, res) => {
-  const { name, last_name, email, password, confirm_password, cep, role } = req.body;
+  const { name, email, password, role } = req.body;
 
   try {
     const validators = await CreateUserValidators(req.body);
@@ -10,11 +10,11 @@ module.exports = async (req, res) => {
 
     const createUser = await CreateUserService({
       name,
-      last_name,
+      // last_name,
       email,
       password,
-      confirm_password,
-      cep,
+      // confirm_password,
+      // cep,
       role
     });
     return res.status(201).json({
