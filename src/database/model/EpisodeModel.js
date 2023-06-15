@@ -20,4 +20,4 @@ const EpisodeSchema = new Schema({
 
 });
 
-exports.default = model('Episode', EpisodeSchema);
+module.exports = model('Episode', EpisodeSchema);
