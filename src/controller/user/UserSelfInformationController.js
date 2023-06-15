@@ -1,4 +1,4 @@
-const UserSelfInformationService = require('../services/user/UserSelfInformationService');
+const UserSelfInformationService = require('../../services/user/UserSelfInformationService');
 
 module.exports = async (req, res) => {
   try {

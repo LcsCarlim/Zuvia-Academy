@@ -1,19 +1,19 @@
 const { Router } = require('express');
 const routes = Router();
 
-const CreateUserController = require('../controller/CreateUserController');
-const LoginController = require('../controller/LoginController');
-const ListAllUsersController = require('../controller/ListAllUsersController');
-const FindUserById = require('../controller/FindUserByIdController');
-const LogoutUserController = require('../controller/LogoutUserController');
+const CreateUserController = require('../controller/user/CreateUserController');
+const LoginController = require('../controller/user/LoginController');
+const ListAllUsersController = require('../controller/user/ListAllUsersController');
+const FindUserById = require('../controller/user/FindUserByIdController');
+const LogoutUserController = require('../controller/user/LogoutUserController');
 const userAuth = require('../middlewares/CheckTokenMiddleware');
 const userLogout = require('../middlewares/LogoutMiddleware');
-const DeleteUserController = require('../controller/DeleteUserController');
-const ConfirmEmailController = require('../controller/ConfirmEmailController');
-const SendEmailController = require('../controller/ResendEmailController');
-const ForgotPasswordController = require('../controller/ForgotPasswordController');
-const ResetPasswordController = require('../controller/ResetPasswordController');
-const UserSelfInformationController = require('../controller/UserSelfInformationController');
+const DeleteUserController = require('../controller/user/DeleteUserController');
+const ConfirmEmailController = require('../controller/user/ConfirmEmailController');
+const SendEmailController = require('../controller/user/ResendEmailController');
+const ForgotPasswordController = require('../controller/user/ForgotPasswordController');
+const ResetPasswordController = require('../controller/user/ResetPasswordController');
+const UserSelfInformationController = require('../controller/user/UserSelfInformationController');
 
 routes.post('/register',
   CreateUserController

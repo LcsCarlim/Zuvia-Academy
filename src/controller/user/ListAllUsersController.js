@@ -1,4 +1,4 @@
-const ListAllUsersService = require('../services/user/ListAllUsersService');
+const ListAllUsersService = require('../../services/user/ListAllUsersService');
 
 module.exports = async (req, res) => {
   const { role } = req.user;

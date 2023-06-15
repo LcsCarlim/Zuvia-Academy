@@ -1,5 +1,5 @@
-const ResetPasswordService = require('../services/user/ResetPasswordService');
-const ResetPasswordValidators = require('../validators/ResetPasswordValidators');
+const ResetPasswordService = require('../../services/user/ResetPasswordService');
+const ResetPasswordValidators = require('../../validators/ResetPasswordValidators');
 
 module.exports = async (req, res) => {
   const { email, token, password } = req.body;

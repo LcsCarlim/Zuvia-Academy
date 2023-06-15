@@ -9,8 +9,8 @@ module.exports = async body => {
     //   .regex(/^[a-zA-Z0-9\s]+$/)
     //   .required(),
     email: Joi.string()
-      .required()
-      .email(),
+      .email()
+      .required(),
     password: Joi.string()
       .pattern(/^[a-zA-Z0-9]{3,30}$/)
       .required()

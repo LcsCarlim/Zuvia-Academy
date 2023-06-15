@@ -1,4 +1,4 @@
-const ConfirmEmailService = require('../services/user/ConfirmEmailService');
+const ConfirmEmailService = require('../../services/user/ConfirmEmailService');
 
 module.exports = async (req, res) => {
   try {
