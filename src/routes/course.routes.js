@@ -3,7 +3,7 @@ const routes = Router();
 
 const userAuth = require('../middlewares/CheckTokenMiddleware');
 const CreateCourseController = require('../controller/course/CreateCourseController');
-const FindCourseCOntroller = require('../controller/course/FindCourseCOntroller');
+const FindCourseController = require('../controller/course/FindCourseController');
 const ListCourseController = require('../controller/course/ListCourseController');
 
 routes.post('/createcourse',
@@ -13,7 +13,7 @@ routes.post('/createcourse',
 
 routes.get('/find/:id',
   userAuth,
-  FindCourseCOntroller
+  FindCourseController
 );
 
 routes.get('/listcourses',
