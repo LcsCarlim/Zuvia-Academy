@@ -2,10 +2,10 @@ const CreateCourseService = require('../../services/course/CreateCourseService')
 
 module.exports = async (req, res) => {
   try {
-    const { user, id } = req;
+    const { user } = req;
     const { name, description, introduction_video } = req.body;
 
-    const createCourse = await CreateCourseService(user, id, name, description, introduction_video);
+    const createCourse = await CreateCourseService(user, name, description, introduction_video);
     return res.status(201).json({
       message: 'Course created',
       createCourse
