@@ -307,6 +307,176 @@
                 }
               }
             }
+        },
+        "/course/createcourse": {
+          "post": {
+            "summary": "Cadastro de curso",
+            "description": "Essa rota será responsável por cadastrar um curso",
+            "tags": [
+              "Curso"
+            ],
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Course"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "500": {
+                "description": "Houve um erro no registro!"
+              },
+              "201": {
+                "description": "Usuário criado com sucesso!",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Course"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/course/find/{id}": {
+          "get": {
+            "summary": "Buscar curso por ID",
+            "description": "Essa rota será responsável por buscar um curso pelo ID.",
+            "tags": [
+              "Course"
+            ],
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "ID do curso",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+              "description": "Success"
+              },
+              "404": {
+                "description": "Not found"
+              }
+            }
+          }
+        },
+        "/course/listcourses": {
+          "get": {
+            "tags": [
+              "Course"
+            ],
+            "summary": "Listar cursos",
+            "description": "Essa rota é responsável em listar todos os cursos da aplicação.",
+            "responses": {
+              "200": {
+                "description": "Cursos: ",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Course"
+                    }
+                  }
+                }
+              },
+              "400": {
+                "description": "Erro na listagem de usuários!"
+              }
+            }
+          }
+        },
+        "/episode/createepisode": {
+          "post": {
+            "summary": "Cadastro de episódios",
+            "description": "Essa rota será responsável por cadastrar episódio",
+            "tags": [
+              "Episode"
+            ],
+            "requestBody": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Episode"
+                  }
+                }
+              }
+            },
+            "responses": {
+              "500": {
+                "description": "Houve um erro no registro!"
+              },
+              "201": {
+                "description": "Usuário criado com sucesso!",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Episode"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "/episode/find/{id}": {
+          "get": {
+            "summary": "Buscar episódio por ID",
+            "description": "Essa rota será responsável por buscar um episódio pelo ID.",
+            "tags": [
+              "Episode"
+            ],
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "ID do episódio",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+              "description": "Success"
+              },
+              "404": {
+                "description": "Not found"
+              }
+            }
+          }
+        },
+        "/episode/listepisode": {
+          "get": {
+            "tags": [
+              "EPisode"
+            ],
+            "summary": "Listar episódios",
+            "description": "Essa rota é responsável em listar todos os episódios da aplicação.",
+            "responses": {
+              "200": {
+                "description": "Episódio: ",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Episode"
+                    }
+                  }
+                }
+              },
+              "400": {
+                "description": "Erro na listagem de episódio!"
+              }
+            }
+          }
         }
     },
     "components": {
@@ -325,6 +495,37 @@
               }
             },
             "required": ["name", "email", "password"]
+          },
+          "Course": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "introduction_video": {
+                "type": "string"
+              }
+            }
+          },
+          "Episode": {
+            "type": "object",
+            "properties": {
+              "course_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "video_url": {
+                "type": "string"
+              }
+            }
           }
         },
         "securitySchemes": {
