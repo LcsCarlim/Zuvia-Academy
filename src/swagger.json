@@ -346,7 +346,7 @@
             "summary": "Buscar curso por ID",
             "description": "Essa rota será responsável por buscar um curso pelo ID.",
             "tags": [
-              "Course"
+              "Curso"
             ],
             "parameters": [
               {
@@ -372,7 +372,7 @@
         "/course/listcourses": {
           "get": {
             "tags": [
-              "Course"
+              "Curso"
             ],
             "summary": "Listar cursos",
             "description": "Essa rota é responsável em listar todos os cursos da aplicação.",
@@ -398,7 +398,7 @@
             "summary": "Cadastro de episódios",
             "description": "Essa rota será responsável por cadastrar episódio",
             "tags": [
-              "Episode"
+              "Episódio"
             ],
             "requestBody": {
               "content": {
@@ -431,7 +431,7 @@
             "summary": "Buscar episódio por ID",
             "description": "Essa rota será responsável por buscar um episódio pelo ID.",
             "tags": [
-              "Episode"
+              "Episódio"
             ],
             "parameters": [
               {
@@ -457,7 +457,7 @@
         "/episode/listepisode": {
           "get": {
             "tags": [
-              "EPisode"
+              "Episódio"
             ],
             "summary": "Listar episódios",
             "description": "Essa rota é responsável em listar todos os episódios da aplicação.",
